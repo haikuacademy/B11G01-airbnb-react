@@ -1,4 +1,4 @@
-function HouseEdit() {
+function Bookings() {
   return (
     <div className="grid grid-cols-5  gap-3 bg-pink-200">
       <div className="bg-pink-600">1</div>
@@ -15,4 +15,4 @@ function HouseEdit() {
   )
 }
 
-export default HouseEdit
+export default Bookings
