@@ -20,6 +20,7 @@ function Houses() {
         <HouseCard />
       </div>
     </div>
-   )
+  )
+}
 
 export default Houses

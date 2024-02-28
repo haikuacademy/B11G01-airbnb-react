@@ -7,8 +7,7 @@ function House() {
       <Nav />
       <div className="grid grid-cols-2 gap-10 rows-1 bg-pink-200">
         <div className="grid bg-pink-600">1</div>
-          <Gallery />
-        </div>
+        <Gallery />
       </div>
       <div className="grid grid-cols-3 gap-40 bg-pink-200">
         <div className="bg-pink-600 col-span-2">
