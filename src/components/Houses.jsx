@@ -10,7 +10,7 @@ function Houses() {
       {/* search bar */}
       <Filters />
       {/* gallery */}
-      <div className="grid gap-2 grid-cols-5 bg-pink-200">
+      <div className="grid gap-2 grid-cols-5">
         <HouseCard />
         <HouseCard />
         <HouseCard />
