@@ -1,7 +1,10 @@
+import Nav from './Nav'
+
 function Houses() {
   return (
     <>
       {/* search bar */}
+      <Nav />
       <div className="flex justify-between gap-1 bg-blue-200">
         <div className="flex bg-blue-600">1</div>
         <div className="flex bg-blue-600">2</div>
