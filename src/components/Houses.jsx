@@ -2,8 +2,8 @@ import Nav from './Nav'
 
 function Houses() {
   return (
-    <>
-      {/* search bar */}
+    /* search bar */
+    <div className="container mx-auto">
       <Nav />
       <div className="flex justify-between gap-1 bg-blue-200">
         <div className="flex bg-blue-600">1</div>
@@ -23,7 +23,7 @@ function Houses() {
         <div className="grid bg-pink-600">6</div>
         <div className="grid bg-pink-600">7</div>
       </div>
-    </>
+    </div>
   )
 }
 
