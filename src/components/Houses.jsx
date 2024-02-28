@@ -1,9 +1,12 @@
+import Nav from './Nav'
 import HouseCard from './HouseCard'
 import Filters from './Filters'
 
 function Houses() {
   return (
-    <>
+    /* search bar */
+    <div className="container mx-auto">
+      <Nav />
       {/* search bar */}
       <Filters />
       {/* gallery */}
@@ -16,8 +19,7 @@ function Houses() {
         <HouseCard />
         <HouseCard />
       </div>
-    </>
-  )
-}
+    </div>
+   )
 
 export default Houses

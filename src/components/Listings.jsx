@@ -1,9 +1,11 @@
+import Nav from './Nav'
 import HouseCard from './HouseCard'
 
 function Listings() {
   return (
-    <>
+    <div className="container mx-auto">
       {/* add new listing */}
+      <Nav />
       <div className="grid gap-40 grid-cols-2 bg-pink-200">
         <div className="grid bg-pink-600">1</div>
         <div className="grid bg-pink-600">2</div>
@@ -18,7 +20,7 @@ function Listings() {
         <HouseCard />
         <HouseCard />
       </div>
-    </>
+    </div>
   )
 }
 
