@@ -20,7 +20,7 @@ function House() {
               <span>2 bathrooms</span>
             </div>
           </div>
-          <div className="flex grid-cols-2 grid=rows-2 gap-2 bg-blue-200">
+          <div className="flex grid-cols-2 grid=rows-2 gap-2">
             <div className="bg-blue-600">3.1</div>
             <div className="pb-4">
               <span class="flex text-xs text-slate-400 justify-left gap-1">
@@ -31,7 +31,12 @@ function House() {
               </div>
             </div>
           </div>
-          <div className="flex grid-cols-2 grid-rows-1 gap-2 bg-blue-200">
+          <div className="flex text-sm mt-6 mb-6">
+            This is a house description. You can come here to get away from
+            technology, which is killing our planet and making society deeply
+            unhappy. Escape to reality. We have plenty of grass to touch.
+          </div>
+          <div className="flex grid-cols-2 grid-rows-1 gap-2">
             <Review />
             <Review />
           </div>
@@ -49,9 +54,6 @@ function House() {
                 <span className="bg-blue-600 justify-end">4.2</span>
               </div>
             </div>
-          </div>
-          <div>
-            <span className="bg-blue-600 justify-end">6</span>
           </div>
         </div>
       </div>
