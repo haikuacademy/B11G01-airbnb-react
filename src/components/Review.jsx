@@ -4,7 +4,7 @@ function Review() {
       <div className="flex cols-2 p-3 border-slate-300 gap-3">
         <img
           src="https://randomuser.me/api/portraits/women/53.jpg"
-          alt="User photo"
+          alt="User"
           className="w-10 rounded-full"
         ></img>
         <div className="inline text-slate-400">
