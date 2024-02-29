@@ -17,7 +17,7 @@ function House() {
             <div className="bg-blue-600">3.1</div>
             <div className="bg-blue-600">3.2</div>
           </div>
-          <div className="flex grid-cols-2 grid-rows-1 gap-2 bg-blue-200">
+          <div className="space-y-2 gb-white">
             <Review />
             <Review />
           </div>
