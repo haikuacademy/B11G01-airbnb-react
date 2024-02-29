@@ -5,6 +5,7 @@ function Review() {
         <img
           src="https://randomuser.me/api/portraits/women/53.jpg"
           alt="User"
+          className="w-10 rounded-full"
         ></img>
         <div className="inline text-slate-400">
           <div>12.12.2023 </div>
