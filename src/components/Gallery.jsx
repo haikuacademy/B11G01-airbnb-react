@@ -1,17 +1,51 @@
 function Gallery() {
   return (
-    <div className="grid">
-      <div className="grid grid-cols-3 grid-rows-3 grid-gap-3">
-        <div className="grid>">1</div>
-        <div className="grid>">2</div>
-        <div className="grid>">3</div>
-        <div className="grid>">4</div>
-        <div className="grid>">5</div>
-        <div className="grid>">6</div>
-        <div className="grid>">7</div>
-        <div className="grid>">8</div>
-        <div className="grid>">9</div>
-      </div>
+    <div className="grid grid-cols-3 gap-2 p-1">
+      <img
+        src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png"
+        alt="House"
+        className="rounded-md"
+      />
+      <img
+        src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_09.png"
+        alt="House"
+        className="rounded-md"
+      />
+      <img
+        src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_08.png"
+        alt="House"
+        className="rounded-md"
+      />
+      <img
+        src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_02.png"
+        alt="House"
+        className="rounded-md"
+      />
+      <img
+        src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_03.png"
+        alt="House"
+        className="rounded-md"
+      />
+      <img
+        src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_04.png"
+        alt="House"
+        className="rounded-md"
+      />
+      <img
+        src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_05.png"
+        alt="House"
+        className="rounded-md"
+      />
+      <img
+        src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_06.png"
+        alt="House"
+        className="rounded-md"
+      />
+      <img
+        src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_07.png"
+        alt="House"
+        className="rounded-md"
+      />
     </div>
   )
 }
