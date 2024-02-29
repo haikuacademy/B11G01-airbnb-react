@@ -1,6 +1,6 @@
 function Filters() {
   return (
-    <form className="flex bg-gray-200 justify-between p-2 mt-2 mb-2 gap-3 text-sm align-left">
+    <form className="flex rounded bg-gray-200 justify-between p-2 mt-2 mb-2 gap-3 text-sm align-left">
       {/* Location */}
       <select className="border w-full p-2 rounded">
         <option selected>Any Location</option>
