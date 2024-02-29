@@ -2,7 +2,10 @@ function Review() {
   return (
     <div className="border border-solid border-slate-300 rounded-lg p-3 m-2 text-sm bg-white">
       <div className="flex cols-2 p-3 border-slate-300 gap-3">
-        <img src="67.jpg"></img>
+        <img
+          src="https://randomuser.me/api/portraits/women/53.jpg"
+          alt="User photo"
+        ></img>
         <div className="inline text-slate-400">
           <div>12.12.2023 </div>
           <div className="text-black">
