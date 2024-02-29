@@ -4,7 +4,7 @@ function Profile() {
   return (
     <div className="container mx-auto">
       <Nav />
-      <div className="grid grid-cols-2 gap-3 border w-full p-3 mt-2 rounded">
+      <div className="grid border w-full p-3 mt-2 rounded">
         <form>
           <div className="text-lg font-bold">Your Profile</div>
           <div className="flex cols-2 p-3 gap-3">
