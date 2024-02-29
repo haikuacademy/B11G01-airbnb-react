@@ -21,7 +21,13 @@ function House() {
             </div>
           </div>
           <div className="flex grid-cols-2 grid=rows-2 gap-2">
-            <div className="bg-blue-600">3.1</div>
+            <div>
+              <img
+                src="https://randomuser.me/api/portraits/women/85.jpg"
+                alt="Host photo"
+                className="w-8 rounded-full"
+              ></img>
+            </div>
             <div className="pb-4">
               <span class="flex text-xs text-slate-400 justify-left gap-1">
                 Hosted by
