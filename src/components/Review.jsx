@@ -46,7 +46,7 @@ function Review() {
           </div>
         </div>
       </div>
-      <div className="flexflex gap-2 my-2"></div>
+      <div className="flex gap-2 my-2"></div>
       <div>
         <FontAwesomeIcon
           icon={faStar}
