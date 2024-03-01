@@ -1,4 +1,5 @@
 import Nav from './Nav'
+import { Link } from 'react-router-dom'
 
 function HouseEdit() {
   return (
@@ -45,9 +46,10 @@ function HouseEdit() {
             <button className="flex border rounded px-2 pt-2 pb-2 text-sm bg-red-400 text-white mt-4">
               Save Changes
             </button>
-            <button className="flex border rounded px-2 pt-2 pb-2 text-sm mt-4">
+            {/* Linking cancel button to listings*/}
+            <Link to="/listings" className="flex border rounded px-2 pt-2 pb-2 text-sm mt-4">
               Cancel
-            </button>
+            </Link>
           </div>
         </form>
         <div className="">
