@@ -11,13 +11,22 @@ function Nav() {
         />
       </Link>
       <div className="inline-flex gap-2 pr-3 ">
-        <Link to="/bookings" className="button border rounded p-1 gap-3">
+        <Link
+          to="/bookings"
+          className="button border rounded p-1 hover:border-red-400"
+        >
           My Bookings
         </Link>
-        <Link to="/listings" className="button border rounded p-1">
-          My Listing
+        <Link
+          to="/listings"
+          className="button border rounded p-1 hover:border-red-400"
+        >
+          My Listings
         </Link>
-        <Link to="/profile" className="button border rounded p-1 items-center">
+        <Link
+          to="/profile"
+          className="button border rounded p-1 items-center hover:border-red-400"
+        >
           <img
             className="inline w-4 h-4 rounded-full ml-1"
             src="https://randomuser.me/api/portraits/men/75.jpg"
