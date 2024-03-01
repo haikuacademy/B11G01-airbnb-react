@@ -42,9 +42,13 @@ function House() {
             technology, which is killing our planet and making society deeply
             unhappy. Escape to reality. We have plenty of grass to touch.
           </div>
-          <div className="flex grid-cols-2 grid-rows-1 gap-2">
-            <Review />
-            <Review />
+          <div className="flex grid gap-2">
+            <div>
+              <Review />
+            </div>
+            <div>
+              <Review />
+            </div>
           </div>
         </div>
         <div className="">
