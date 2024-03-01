@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 function HouseCard() {
   return (
     <div className="border rounded p-2 m-1">
