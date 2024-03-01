@@ -43,12 +43,12 @@ function House() {
             unhappy. Escape to reality. We have plenty of grass to touch.
           </div>
           <div className="flex grid gap-2">
-            <flex>
+            <div>
               <Review />
-            </flex>
-            <flex>
+            </div>
+            <div>
               <Review />
-            </flex>
+            </div>
           </div>
         </div>
         <div className="">
