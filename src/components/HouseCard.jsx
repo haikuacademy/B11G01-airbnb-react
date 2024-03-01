@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStar, faCommentDots } from '@fortawesome/free-solid-svg-icons'
+
 function HouseCard() {
   return (
     <div className="border rounded p-2 m-1">
@@ -18,8 +21,24 @@ function HouseCard() {
       </div>
       <div className="pt-2">
         <div class="flex justify-between">
-          <span>4.5</span>
-          <span>34</span>
+          <div>
+            <FontAwesomeIcon
+              icon={faStar}
+              className="absolute mt-1 mr-4 pointer-events-none text-yellow-500"
+            />
+            <FontAwesomeIcon
+              icon={faStar}
+              className="absolute mt-1 ml-5 pointer-events-none text-yellow-500"
+            />
+            <div className="pl-11">2</div>
+          </div>
+          <div className="mr-5">
+            34
+            <FontAwesomeIcon
+              icon={faCommentDots}
+              className="absolute mt-1 ml-1 pointer-events-none"
+            />
+          </div>
         </div>
       </div>
     </div>

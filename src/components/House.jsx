@@ -44,7 +44,6 @@ function House() {
           </div>
           <div className="flex grid-cols-2 grid-rows-1 gap-2">
             <Review />
-            <Review />
           </div>
         </div>
         <div className="">

@@ -1,3 +1,35 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCommentDots, faStar } from '@fortawesome/free-solid-svg-icons'
+
+export default function Reviews() {
+  return (
+    <div className="container mx-auto gap-2">
+      <div className="flex gap-2 items-center">
+        <div className="inline mb-4">
+          <FontAwesomeIcon icon={faCommentDots} />
+          <span className="text-lg font-bold ml-1"> 34 Reviews</span>
+          <div>
+            <FontAwesomeIcon
+              icon={faStar}
+              className="absolute mt-1 pointer-events-none text-yellow-500"
+            />
+            <span
+              className="text-sm ml-6
+            "
+            >
+              Average Rating: 2.3{' '}
+            </span>
+          </div>
+        </div>
+      </div>
+      <div className="space-y-3">
+        <Review />
+        <Review />
+      </div>
+    </div>
+  )
+}
+
 function Review() {
   return (
     <div className="border border-solid border-slate-300 rounded-lg p-3 m-2 text-sm bg-white">
@@ -15,7 +47,17 @@ function Review() {
         </div>
       </div>
       <div className="flexflex gap-2 my-2"></div>
-      <span mr-2>Rating : 2.5</span>
+      <div>
+        <FontAwesomeIcon
+          icon={faStar}
+          className="absolute mt-1 mr-4 pointer-events-none text-yellow-500"
+        />
+        <FontAwesomeIcon
+          icon={faStar}
+          className="absolute mt-1 ml-5 pointer-events-none text-yellow-500"
+        />
+        <div className="pl-11">2</div>
+      </div>
       <div className="grid justify-items-start p-3 items-center">
         <p>
           Awful place, the pool is cold, the beer is warm. My husband still
@@ -26,5 +68,3 @@ function Review() {
     </div>
   )
 }
-
-export default Review
