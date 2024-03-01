@@ -1,6 +1,7 @@
 import Nav from './Nav'
 import Gallery from './Gallery'
 import Review from './Review'
+import LeaveReview from './LeaveReview'
 
 function House() {
   return (
@@ -46,7 +47,7 @@ function House() {
             <Review />
           </div>
         </div>
-        <div className="">
+        <div>
           <div className="border rounded p-2 m-1">
             <div>
               <span className="font-bold">$120</span>
@@ -59,6 +60,9 @@ function House() {
                 <span className="bg-blue-600 justify-end">4.2</span>
               </div>
             </div>
+          </div>
+          <div>
+            <LeaveReview />
           </div>
         </div>
       </div>
