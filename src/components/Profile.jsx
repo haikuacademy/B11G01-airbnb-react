@@ -1,5 +1,12 @@
 import Nav from './Nav'
 
+const user = {
+  firstName: 'John',
+  lastName: 'Jones',
+  email: 'john.jones@example.com',
+  picture: 'https://example.com/john_jones_picture.jpg'
+}
+
 function Profile() {
   return (
     <div className="container mx-auto">

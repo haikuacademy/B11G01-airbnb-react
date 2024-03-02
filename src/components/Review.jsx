@@ -1,6 +1,39 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCommentDots, faStar } from '@fortawesome/free-solid-svg-icons'
 
+const reviews = [
+  {
+    content: 'This product exceeded my expectations! I love it.',
+    rating: 5,
+    date: '2024-03-02',
+    author: {
+      firstName: 'John',
+      lastName: 'Jones',
+      picture: 'https://example.com/john_jones_picture.jpg'
+    }
+  },
+  {
+    content: 'Not satisfied with the quality. It could be better.',
+    rating: 2,
+    date: '2024-03-01',
+    author: {
+      firstName: 'Alice',
+      lastName: 'Smith',
+      picture: 'https://example.com/alice_smith_picture.jpg'
+    }
+  },
+  {
+    content: 'Great service and fast delivery!',
+    rating: 4.5,
+    date: '2024-02-28',
+    author: {
+      firstName: 'Jim',
+      lastName: 'Crawford',
+      picture: 'https://example.com/jim_crawford_picture.jpg'
+    }
+  }
+]
+
 export default function Reviews() {
   return (
     <div className="container mx-auto gap-2">
