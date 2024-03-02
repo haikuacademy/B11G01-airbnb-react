@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 function Nav() {
   return (
-    <div className="flex justify-between items-center p-3 mb-3">
+    <div className="flex justify-between items-center p-3 mb-1">
       <Link to="/" className="flexbox items-start">
         <img
           className="w-24 mx-auto justify-start"
@@ -13,22 +13,22 @@ function Nav() {
       <div className="inline-flex gap-2 pr-3 ">
         <Link
           to="/bookings"
-          className="button border rounded p-1 hover:border-red-400"
+          className="button border rounded p-1 hover:border-red-400 p-2"
         >
           My Bookings
         </Link>
         <Link
           to="/listings"
-          className="button border rounded p-1 hover:border-red-400"
+          className="button border rounded p-1 hover:border-red-400 p-2"
         >
           My Listings
         </Link>
         <Link
           to="/profile"
-          className="button border rounded p-1 items-center hover:border-red-400"
+          className="button border rounded p-1 items-center hover:border-red-400 p-2"
         >
           <img
-            className="inline w-4 h-4 rounded-full ml-1"
+            className="inline w-5 h-5 rounded-full mr-1 mb-1"
             src="https://randomuser.me/api/portraits/men/75.jpg"
             alt="user"
           />

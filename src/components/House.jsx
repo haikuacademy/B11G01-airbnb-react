@@ -44,7 +44,7 @@ function House() {
               </div>
             </div>
           </div>
-          <div className="flex text-sm mt-6 mb-6">
+          <div className="flex text-sm mb-10">
             This is a house description. You can come here to get away from
             technology, which is killing our planet and making society deeply
             unhappy. Escape to reality. We have plenty of grass to touch.
