@@ -1,16 +1,23 @@
 import Nav from './Nav'
 import Gallery from './Gallery'
 import Review from './Review'
+import LeaveReview from './LeaveReview'
 
 function House() {
   return (
     <div className="container mx-auto">
       <Nav />
-      <div className="grid grid-cols-2 gap-10 rows-1">
-        <div className="grid">1</div>
+      <div className="grid grid-cols-2 gap-10 rows-1 p-2">
+        <div className="grid">
+          <img
+            src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png"
+            alt="House"
+            className="rounded-md"
+          />
+        </div>
         <Gallery />
       </div>
-      <div className="grid grid-cols-3 gap-40">
+      <div className="grid grid-cols-3 gap-40 ml-2 p-2">
         <div className="col-span-2">
           <div className="pb-4">
             <span className="text-xl font-bold">Phuket, Thailand</span>
@@ -20,11 +27,11 @@ function House() {
               <span>2 bathrooms</span>
             </div>
           </div>
-          <div className="flex grid-cols-2 grid=rows-2 gap-2">
+          <div className="flex grid-cols-2 grid=rows-2 gap-2 p-2">
             <div>
               <img
                 src="https://randomuser.me/api/portraits/women/85.jpg"
-                alt="Host photo"
+                alt="Host"
                 className="w-8 rounded-full"
               ></img>
             </div>
@@ -84,6 +91,9 @@ function House() {
                 </button>
               </div>
             </div>
+          </div>
+          <div>
+            <LeaveReview />
           </div>
         </div>
       </div>

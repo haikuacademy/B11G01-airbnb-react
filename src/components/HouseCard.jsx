@@ -13,7 +13,7 @@ function HouseCard() {
         className="rounded"
       ></img>
       <span className="text-lg font-bold">Phuket, Thailand</span>
-      <div class="flex text-sm justify-left gap-1">
+      <div class="flex text-sm justify-left gap-1 font-extralight">
         <span>2 rooms</span>
         <span>·</span>
         <span>2 bathrooms</span>
