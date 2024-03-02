@@ -3,6 +3,31 @@ import Gallery from './Gallery'
 import Review from './Review'
 import LeaveReview from './LeaveReview'
 
+const house = {
+  location: 'Beautiful City, Country',
+  rooms: 3,
+  bathrooms: 2,
+  description: 'Cozy and spacious house in a prime location',
+  price: 60,
+  rating: 4.5,
+  host: {
+    firstName: 'John',
+    lastName: 'Doe',
+    picture: 'https://example.com/john_doe_picture.jpg'
+  },
+  images: [
+    'https://example.com/image1.jpg',
+    'https://example.com/image2.jpg',
+    'https://example.com/image3.jpg',
+    'https://example.com/image4.jpg',
+    'https://example.com/image5.jpg',
+    'https://example.com/image6.jpg',
+    'https://example.com/image7.jpg',
+    'https://example.com/image8.jpg',
+    'https://example.com/image9.jpg'
+  ]
+}
+
 function House() {
   return (
     <div className="container mx-auto">

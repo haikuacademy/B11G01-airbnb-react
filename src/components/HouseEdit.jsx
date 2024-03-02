@@ -1,6 +1,31 @@
 import Nav from './Nav'
 import { Link } from 'react-router-dom'
 
+const house = {
+  location: 'Beautiful City, Country',
+  rooms: 3,
+  bathrooms: 2,
+  description: 'Cozy and spacious house in a prime location',
+  price: 60,
+  rating: 4.5,
+  host: {
+    firstName: 'John',
+    lastName: 'Doe',
+    picture: 'https://example.com/john_doe_picture.jpg'
+  },
+  images: [
+    'https://example.com/image1.jpg',
+    'https://example.com/image2.jpg',
+    'https://example.com/image3.jpg',
+    'https://example.com/image4.jpg',
+    'https://example.com/image5.jpg',
+    'https://example.com/image6.jpg',
+    'https://example.com/image7.jpg',
+    'https://example.com/image8.jpg',
+    'https://example.com/image9.jpg'
+  ]
+}
+
 function HouseEdit() {
   return (
     <div className="container mx-auto">
@@ -47,7 +72,10 @@ function HouseEdit() {
               Save Changes
             </button>
             {/* Linking cancel button to listings*/}
-            <Link to="/listings" className="flex border rounded px-2 pt-2 pb-2 text-sm mt-4">
+            <Link
+              to="/listings"
+              className="flex border rounded px-2 pt-2 pb-2 text-sm mt-4"
+            >
               Cancel
             </Link>
           </div>
