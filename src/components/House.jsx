@@ -53,17 +53,42 @@ function House() {
             <Review />
           </div>
         </div>
-        <div>
-          <div className="border rounded p-2 m-1">
-            <div>
+        <div className="">
+          <div className="border rounded p-3 m-1">
+            <div className="pb-2">
               <span className="font-bold">$120</span>
               <span className="text-xs font-bold text-slate-400"> / night</span>
             </div>
-            <div class="flex text-sm gap-1 justify-left">
-              <span>3 nights =</span>
-              <span className="font-bold">$360</span>
-              <div>
-                <span className="bg-blue-600 justify-end">4.2</span>
+            <div className="flex">
+              <div className="flex justify-start pr-1 flex-col">
+                <label className="text-sm font-thin text-gray-400">
+                  Check in
+                </label>
+                <input className="border rounded p-2 gap-2" type="date" />
+              </div>
+              <div className="flex flex-col">
+                <label className="text-sm font-thin text-gray-400">
+                  Check out
+                </label>
+                <input className="border rounded p-2" type="date" />
+              </div>
+            </div>
+            <textarea
+              rows="7"
+              className="border rounded w-full mt-1 pt-1 pl-2"
+              placeholder="Please send a message to the host..."
+            ></textarea>
+            <div class="flex justify-between items-center gap-1">
+              <div className="flex justify-start pl-2">
+                <div className="flex pr-1">3 nights =</div>
+                <div className="flex font-bold">$360</div>
+              </div>
+
+              <div className="flex justify-end">
+                <button className="flex justify-end border bg-red-400  text-white rounded p-3 py-2">
+                  {' '}
+                  Reserve
+                </button>
               </div>
             </div>
           </div>
