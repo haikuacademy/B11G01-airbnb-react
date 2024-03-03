@@ -43,10 +43,12 @@ function HouseCard({ booking, listing }) {
             </div>
           </div>
         </div>
-        <div className="bg-green-100 p-2 mt-2 flex flex-col items-center">
-          <p className="text-black">{booking.startDate} - {booking.endDate}</p>
-          <p className="text-black">{booking.totalNights} nights = ${booking.totalPrice}</p>
-        </div>
+        {booking && (
+          <div className="bg-green-100 p-2 mt-2 flex flex-col items-center">
+            <p className="text-black">{booking.startDate} - {booking.endDate}</p>
+            <p className="text-black">{booking.totalNights} nights = ${booking.totalPrice}</p>
+          </div>
+        )}
       </div>
     </Link>
   )
