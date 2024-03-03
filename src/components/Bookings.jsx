@@ -54,8 +54,8 @@ function Bookings() {
           key = { index }
           location = { booking.location }
           rooms = { booking.rooms }
-          bathrooms = { bookings.bathrooms }
-          nightlyPrice = { bookings.nightlyPrice }
+          bathrooms = { booking.bathrooms }
+          nightlyPrice = { booking.nightlyPrice }
           rating = {booking.rating}
           reviews = {booking.reviews}
           photo = {booking.photo}
@@ -63,7 +63,8 @@ function Bookings() {
           endDate = {booking.endDate}
           totalNights = {booking.totalNights}
           totalPrice = {booking.totalPrice}
-          booking = {true}
+            booking={true}
+            {...booking}
            />
         ))}
       </div>
