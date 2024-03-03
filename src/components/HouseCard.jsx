@@ -46,7 +46,9 @@ function HouseCard({ booking }) {
             </div>
           </div>
         </div>
-        
+        <div className="bg-green-100 p-2 mt-2 flex flex-col items-center">
+          <p className="text-black">{nights} nights = ${totalPrice}</p>
+        </div>
       </div>
     </Link>
   )
