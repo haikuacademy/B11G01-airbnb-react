@@ -49,8 +49,23 @@ function Bookings() {
       <Nav />
       {/* listings gallery */}
       <div className="grid gap-2 grid-cols-5">
-        <HouseCard />
-        <HouseCard />
+        {bookings.map((booking, index) => (
+        <HouseCard
+          key = { index }
+          location = { booking.location }
+          rooms = { booking.rooms }
+          bathrooms = { bookings.bathrooms }
+          nightlyPrice = { bookings.nightlyPrice }
+          rating = {booking.rating}
+          reviews = {booking.reviews}
+          photo = {booking.photo}
+          startDate = {booking.startDate}
+          endDate = {booking.endDate}
+          totalNights = {booking.totalNights}
+          totalPrice = {booking.totalPrice}
+          booking = {true}
+           />
+        ))}
       </div>
     </div>
   )
