@@ -51,11 +51,12 @@ function HouseCard({ booking, listing }) {
         )}
          {listing && (
           <div className="bg-white-200 p-2 mt-2 flex justify-center rounded">
-            <div className="bg-blue-200 p-2 mx-2">
+            <div className="bg-white p-2 mx-1 rounded border">
               <Link to="/view-listing/1" className="text-black">View</Link>
               </div>
-            <span className="mx-2">|</span>
-            <Link to="/edit-listing/1" className="text-black ">Edit</Link>
+            <div className="bg-white p-2 mx-1 rounded border">
+              <Link to="/edit-listing/1" className="text-black ">Edit</Link>
+              </div>
           </div>
         )}
       </div>
