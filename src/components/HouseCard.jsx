@@ -2,7 +2,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar, faCommentDots } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 
-function HouseCard() {
+function HouseCard({ booking }) {
+  let nights = 3
+  let nightlyPrice = 120
+  let totalPrice = nights * nightlyPrice
   return (
     <Link to="/houses/1>" className="hover:text-blue-300">
       <div className="border rounded p-2 m-1">
@@ -43,6 +46,7 @@ function HouseCard() {
             </div>
           </div>
         </div>
+        
       </div>
     </Link>
   )
