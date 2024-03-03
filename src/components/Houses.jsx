@@ -41,8 +41,18 @@ function Houses() {
       <Filters />
       {/* gallery */}
       <div className="grid gap-2 grid-cols-5">
-        {houses.map((house, index) => )}
-        <HouseCard />
+        {houses.map((house, index) => (
+          <HouseCard
+            key={index}
+            location={house.location}
+            rooms={house.rooms}
+            bathrooms={house.bathrooms}
+            price={house.price}
+            rating={house.rating}
+            reviews={house.reviews}
+            photo={house.photo}
+          />
+          ))}
       </div>
     </div>
   )
