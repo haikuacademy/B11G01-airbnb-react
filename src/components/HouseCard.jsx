@@ -3,9 +3,6 @@ import { faStar, faCommentDots } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 
 function HouseCard({ booking }) {
-  let nights = 3
-  let nightlyPrice = 120
-  let totalPrice = nights * nightlyPrice
   return (
     <Link to="/houses/1>" className="hover:text-blue-300">
       <div className="border rounded p-2 m-1">
@@ -47,7 +44,8 @@ function HouseCard({ booking }) {
           </div>
         </div>
         <div className="bg-green-100 p-2 mt-2 flex flex-col items-center">
-          <p className="text-black">{nights} nights = ${totalPrice}</p>
+          <p className="text-black">{booking.startDate} - {booking.endDate}</p>
+          <p className="text-black">{booking.totalNights} nights = ${booking.totalPrice}</p>
         </div>
       </div>
     </Link>
