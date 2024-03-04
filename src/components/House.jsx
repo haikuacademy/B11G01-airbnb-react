@@ -3,42 +3,38 @@ import Gallery from './Gallery'
 import Review from './Review'
 import LeaveReview from './LeaveReview'
 
+const house = {
+  location: 'Beautiful City, Country',
+  rooms: 3,
+  bathrooms: 2,
+  description: 'Cozy and spacious house in a prime location.',
+  nightlyPrice: 60,
+  totalNights: 3,
+  totalPrice: 180,
+  rating: 4.5,
+  host: {
+    firstName: 'Juan',
+    lastName: 'Doe',
+    picture: 'https://randomuser.me/api/portraits/men/77.jpg'
+  },
+  images: [
+    'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png',
+    'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_02.png',
+    'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_03.png',
+    'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_04.png',
+    'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_05.png',
+    'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_06.png',
+    'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_07.png',
+    'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_08.png',
+    'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_09.png'
+  ]
+}
+
 function House() {
-  const house = {
-    location: 'Beautiful City, Country',
-    rooms: 3,
-    bathrooms: 2,
-    description: 'Cozy and spacious house in a prime location.',
-    nightlyPrice: 60,
-    totalNights: 3,
-    totalPrice: 180,
-    rating: 4.5,
-    host: {
-      firstName: 'Juan',
-      lastName: 'Doe',
-      picture: 'https://randomuser.me/api/portraits/men/77.jpg'
-    },
-    images: [
-      'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png',
-      'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_02.png',
-      'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_03.png',
-      'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_04.png',
-      'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_05.png',
-      'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_06.png',
-      'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_07.png',
-      'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_08.png',
-      'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_09.png'
-    ]
-  }
   return (
     <div className="container mx-auto">
       <Nav />
-      <div className="grid grid-cols-2 gap-10 rows-1 p-2">
-        <div className="grid">
-          <img src={house.images[0]} alt="House" className="rounded-md" />
-        </div>
-        <Gallery />
-      </div>
+      <Gallery images={house.images} />
       <div className="grid grid-cols-3 gap-40 ml-2 p-2">
         <div className="col-span-2">
           <div className="pb-4">
