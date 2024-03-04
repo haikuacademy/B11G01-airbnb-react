@@ -12,8 +12,8 @@ const bookings = [
     photo: 'https://example.com/house1_photo.jpg',
     startDate: '2024-04-01',
     endDate: '2024-04-03',
-    totalNights: 3,
-    totalPrice: 150
+    totalNights: 2,
+    totalPrice: 100
   },
   {
     location: 'Suburban Area',
@@ -25,8 +25,8 @@ const bookings = [
     photo: 'https://example.com/house2_photo.jpg',
     startDate: '2024-06-01',
     endDate: '2024-06-03',
-    totalNights: 3,
-    totalPrice: 150
+    totalNights: 2,
+    totalPrice: 80
   },
   {
     location: 'Countryside',
@@ -38,8 +38,8 @@ const bookings = [
     photo: 'https://example.com/house3_photo.jpg',
     startDate: '2024-11-22',
     endDate: '2024-11-29',
-    totalNights: 3,
-    totalPrice: 150
+    totalNights: 7,
+    totalPrice: 595
   }
 ]
 
@@ -62,9 +62,9 @@ function Bookings() {
           startDate = {booking.startDate}
           endDate = {booking.endDate}
           totalNights = {booking.totalNights}
-          totalPrice = {booking.totalPrice}
-            booking={true}
-            {...booking}
+          totalPrice={booking.totalPrice}
+          booking={booking}
+          {...booking}
            />
         ))}
       </div>
