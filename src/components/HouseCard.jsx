@@ -2,6 +2,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar, faCommentDots } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 
+function formatDate(dateString) {
+  const date = new Date(dateString)
+  const options = { day: 'numeric', month: 'short', year: 'numeric' }
+  return date.toLocaleDateString('en-US', options)
+}
+
 function HouseCard({ booking, listing }) {
   return (
     <Link to="/houses/1" className="hover:text-blue-300">
@@ -45,7 +51,7 @@ function HouseCard({ booking, listing }) {
         </div>
         {booking && (
           <div className="bg-green-100 p-2 mt-2 flex flex-col items-center">
-            <p className="text-black">{booking.startDate} - {booking.endDate}</p>
+            <p className="text-black">{formatDate(booking.startDate)} - {formatDate(booking.endDate)}</p>
             <p className="text-black">{booking.totalNights} nights = ${booking.totalPrice}</p>
           </div>
         )}
