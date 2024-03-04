@@ -2,7 +2,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar, faCommentDots } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 
-
 function formatDate(dateString) {
   const date = new Date(dateString)
   const options = { day: 'numeric', month: 'short', year: 'numeric' }
@@ -49,20 +48,29 @@ function HouseCard(props) {
             </div>
           </div>
         </div>
-        {booking && (
+        {props.booking && (
           <div className="bg-green-100 p-2 mt-2 flex flex-col items-center">
-            <p className="text-black">{formatDate(booking.startDate)} - {formatDate(booking.endDate)}</p>
-            <p className="text-black font-bold">{booking.totalNights} nights = ${booking.totalPrice}</p>
+            <p className="text-black">
+              {formatDate(props.booking.startDate)} -{' '}
+              {formatDate(props.booking.endDate)}
+            </p>
+            <p className="text-black font-bold">
+              {props.booking.totalNights} nights = ${props.booking.totalPrice}
+            </p>
           </div>
         )}
-         {listing && (
+        {props.listing && (
           <div className="bg-white-200 p-2 mt-2 flex justify-center rounded">
             <div className="bg-white p-2 mx-1 rounded border">
-              <Link to="/view-listing/1" className="text-black">View</Link>
-              </div>
+              <Link to="/view-listing/1" className="text-black">
+                View
+              </Link>
+            </div>
             <div className="bg-white p-2 mx-1 rounded border">
-              <Link to="/edit-listing/1" className="text-black ">Edit</Link>
-              </div>
+              <Link to="/edit-listing/1" className="text-black ">
+                Edit
+              </Link>
+            </div>
           </div>
         )}
       </div>
