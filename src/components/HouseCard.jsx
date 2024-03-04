@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 function formatDate(dateString) {
   const date = new Date(dateString)
   const options = { day: 'numeric', month: 'short', year: 'numeric' }
-  return date.toLocaleDateString('en-US', options)
+  return date.toLocaleDateString('en-US', options).replace(',', '')
 }
 
 function HouseCard({ booking, listing }) {
