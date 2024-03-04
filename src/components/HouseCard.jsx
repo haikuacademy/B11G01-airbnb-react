@@ -7,8 +7,7 @@ function HouseCard({ booking, listing }) {
     <Link to="/houses/1" className="hover:text-blue-300">
       <div className="border rounded p-2 m-1">
         <img
-          src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png
-"
+          src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png"
           alt="House photo"
           className="rounded"
         ></img>

@@ -3,59 +3,56 @@ import Gallery from './Gallery'
 import Review from './Review'
 import LeaveReview from './LeaveReview'
 
-const house = {
-  location: 'Beautiful City, Country',
-  rooms: 3,
-  bathrooms: 2,
-  description: 'Cozy and spacious house in a prime location',
-  price: 60,
-  rating: 4.5,
-  host: {
-    firstName: 'John',
-    lastName: 'Doe',
-    picture: 'https://example.com/john_doe_picture.jpg'
-  },
-  images: [
-    'https://example.com/image1.jpg',
-    'https://example.com/image2.jpg',
-    'https://example.com/image3.jpg',
-    'https://example.com/image4.jpg',
-    'https://example.com/image5.jpg',
-    'https://example.com/image6.jpg',
-    'https://example.com/image7.jpg',
-    'https://example.com/image8.jpg',
-    'https://example.com/image9.jpg'
-  ]
-}
-
 function House() {
+  const house = {
+    location: 'Beautiful City, Country',
+    rooms: 3,
+    bathrooms: 2,
+    description: 'Cozy and spacious house in a prime location.',
+    nightlyPrice: 60,
+    totalNights: 3,
+    totalPrice: 180,
+    rating: 4.5,
+    host: {
+      firstName: 'Juan',
+      lastName: 'Doe',
+      picture: 'https://randomuser.me/api/portraits/men/77.jpg'
+    },
+    images: [
+      'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png',
+      'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_02.png',
+      'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_03.png',
+      'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_04.png',
+      'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_05.png',
+      'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_06.png',
+      'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_07.png',
+      'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_08.png',
+      'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_09.png'
+    ]
+  }
   return (
     <div className="container mx-auto">
       <Nav />
       <div className="grid grid-cols-2 gap-10 rows-1 p-2">
         <div className="grid">
-          <img
-            src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png"
-            alt="House"
-            className="rounded-md"
-          />
+          <img src={house.images[0]} alt="House" className="rounded-md" />
         </div>
         <Gallery />
       </div>
       <div className="grid grid-cols-3 gap-40 ml-2 p-2">
         <div className="col-span-2">
           <div className="pb-4">
-            <span className="text-xl font-bold">Phuket, Thailand</span>
+            <span className="text-xl font-bold">{house.location}</span>
             <div class="flex text-xs text-slate-400 justify-left gap-1">
-              <span>2 rooms</span>
+              <span>{house.rooms} rooms</span>
               <span>·</span>
-              <span>2 bathrooms</span>
+              <span>{house.bathrooms} bathrooms</span>
             </div>
           </div>
           <div className="flex grid-cols-2 grid=rows-2 gap-2 p-2">
             <div>
               <img
-                src="https://randomuser.me/api/portraits/women/85.jpg"
+                src={house.host.picture}
                 alt="Host"
                 className="w-8 rounded-full"
               ></img>
@@ -65,15 +62,13 @@ function House() {
                 Hosted by
               </span>
               <div class="flex text-sm justify-left gap-1">
-                <span>Linda Smith</span>
+                <span>
+                  {house.host.firstName} {house.host.lastName}
+                </span>
               </div>
             </div>
           </div>
-          <div className="flex text-sm mb-10">
-            This is a house description. You can come here to get away from
-            technology, which is killing our planet and making society deeply
-            unhappy. Escape to reality. We have plenty of grass to touch.
-          </div>
+          <div className="flex text-sm mb-10">{house.description}</div>
           <div className="flex grid-cols-2 gap-2">
             <Review />
           </div>
@@ -81,7 +76,7 @@ function House() {
         <div className="">
           <div className="border rounded p-3 m-1">
             <div className="pb-2">
-              <span className="font-bold">$120</span>
+              <span className="font-bold">${house.nightlyPrice}</span>
               <span className="text-xs font-bold text-slate-400"> / night</span>
             </div>
             <div className="flex">
@@ -105,8 +100,8 @@ function House() {
             ></textarea>
             <div class="flex justify-between items-center gap-1">
               <div className="flex justify-start pl-2">
-                <div className="flex pr-1">3 nights =</div>
-                <div className="flex font-bold">$360</div>
+                <div className="flex pr-1">{house.totalNights} nights =</div>
+                <div className="flex font-bold">${house.totalPrice}</div>
               </div>
 
               <div className="flex justify-end">
