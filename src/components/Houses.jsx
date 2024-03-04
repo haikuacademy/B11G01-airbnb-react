@@ -4,31 +4,34 @@ import Filters from './Filters'
 
 const houses = [
   {
-    location: 'City Center',
+    location: 'Bangkok',
     rooms: 3,
     bathrooms: 2,
-    price: 250000,
+    price: 250,
     rating: 4.8,
     reviews: 15,
-    photo: 'https://example.com/house1_photo.jpg'
+    photo:
+      'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_07.png'
   },
   {
-    location: 'Suburban Area',
+    location: 'Koh Samui',
     rooms: 4,
     bathrooms: 3,
-    price: 350000,
-    rating: 4.5,
+    price: 30,
+    rating: 3.5,
     reviews: 10,
-    photo: 'https://example.com/house2_photo.jpg'
+    photo:
+      'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_08.png'
   },
   {
-    location: 'Countryside',
+    location: 'Madrid',
     rooms: 5,
     bathrooms: 4,
-    price: 500000,
-    rating: 4.9,
+    price: 50,
+    rating: 2.9,
     reviews: 20,
-    photo: 'https://example.com/house3_photo.jpg'
+    photo:
+      'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_09.png'
   }
 ]
 
@@ -41,13 +44,9 @@ function Houses() {
       <Filters />
       {/* gallery */}
       <div className="grid gap-2 grid-cols-5">
-        <HouseCard />
-        <HouseCard />
-        <HouseCard />
-        <HouseCard />
-        <HouseCard />
-        <HouseCard />
-        <HouseCard />
+        {houses.map((house, index) => (
+          <HouseCard house={house} />
+        ))}
       </div>
     </div>
   )
