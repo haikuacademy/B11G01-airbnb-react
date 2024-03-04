@@ -63,7 +63,7 @@ function Bookings() {
           endDate = {booking.endDate}
           totalNights = {booking.totalNights}
           totalPrice = {booking.totalPrice}
-            booking={true}
+            booking={booking}
             {...booking}
            />
         ))}
