@@ -1,13 +1,12 @@
 import Nav from './Nav'
 
-const user = {
-  firstName: 'John',
-  lastName: 'Jones',
-  email: 'john.jones@example.com',
-  picture: 'https://example.com/john_jones_picture.jpg'
-}
-
 function Profile() {
+  const user = {
+    firstName: 'John',
+    lastName: 'Jones',
+    email: 'john.jones@example.com',
+    picture: 'https://randomuser.me/api/portraits/women/69.jpg'
+  }
   return (
     <div className="container mx-auto">
       <Nav />
@@ -16,18 +15,30 @@ function Profile() {
           <div className="text-lg font-bold">Your Profile</div>
           <div className="flex cols-2 p-3 gap-3">
             <img
-              src="https://randomuser.me/api/portraits/women/69.jpg"
+              src={user.picture}
               alt="User"
               className="w-12 rounded-full"
             ></img>
             <input type="text" className="border w-full p-2 rounded" />
           </div>
           <div className="text-sm text-gray-400 pt-2">First Name</div>
-          <input type="text" className="border w-full p-2 rounded" />
+          <input
+            type="text"
+            className="border w-full p-2 rounded"
+            placeholder={user.firstName}
+          />
           <div className="text-sm text-gray-400 pt-2">Last Name</div>
-          <input type="text" className="border w-full p-2 rounded" />
+          <input
+            type="text"
+            className="border w-full p-2 rounded"
+            placeholder={user.lastName}
+          />
           <div className="text-sm text-gray-400 pt-2">Email</div>
-          <input type="text" className="border w-full p-2 rounded" />
+          <input
+            type="text"
+            className="border w-full p-2 rounded"
+            placeholder={user.email}
+          />
           <div className="flex justify-between gap-2">
             <button className="flex border rounded px-2 pt-2 pb-2 text-sm bg-red-400 text-white mt-4">
               Save Changes
