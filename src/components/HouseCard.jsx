@@ -43,6 +43,9 @@ function HouseCard() {
             </div>
           </div>
         </div>
+           <div className="bg-green-100 p-2 mt-2 flex justify-center items-center">
+            <p className="text-black">night stays</p>
+          </div>
       </div>
     </Link>
   )
