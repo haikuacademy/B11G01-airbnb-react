@@ -25,7 +25,7 @@ function HouseCard(props) {
           <span>{props.house.bathrooms} bathrooms</span>
         </div>
         <div className="pt-2">
-          <span className="text-lg font-bold">${props.house.price}</span>
+          <span className="text-lg font-bold">${props.house.nightlyPrice}</span>
         </div>
         <div className="pt-2">
           <div class="flex justify-between">
