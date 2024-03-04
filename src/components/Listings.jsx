@@ -46,13 +46,13 @@ function Listings() {
       </div>
       {/* listings gallery */}
       <div className="grid gap-4 grid-cols-5">
-        <HouseCard />
-        <HouseCard />
-        <HouseCard />
-        <HouseCard />
-        <HouseCard />
-        <HouseCard />
-        <HouseCard />
+        <HouseCard listing={true} />
+        <HouseCard listing={true}/>
+        <HouseCard listing={true}/>
+        <HouseCard listing={true}/>
+        <HouseCard listing={true}/>
+        <HouseCard listing={true}/>
+        <HouseCard listing={true}/>
       </div>
     </div>
   )
