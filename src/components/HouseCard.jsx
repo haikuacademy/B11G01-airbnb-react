@@ -42,6 +42,22 @@ function HouseCard(props) {
             </div>
           </div>
         </div>
+        {booking && (
+          <div className="bg-green-100 p-2 mt-2 flex flex-col items-center">
+            <p className="text-black">{booking.startDate} - {booking.endDate}</p>
+            <p className="text-black">{booking.totalNights} nights = ${booking.totalPrice}</p>
+          </div>
+        )}
+         {listing && (
+          <div className="bg-white-200 p-2 mt-2 flex justify-center rounded">
+            <div className="bg-white p-2 mx-1 rounded border">
+              <Link to="/view-listing/1" className="text-black">View</Link>
+              </div>
+            <div className="bg-white p-2 mx-1 rounded border">
+              <Link to="/edit-listing/1" className="text-black ">Edit</Link>
+              </div>
+          </div>
+        )}
       </div>
     </Link>
   )
