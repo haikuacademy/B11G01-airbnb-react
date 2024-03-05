@@ -87,36 +87,7 @@ function HouseEdit() {
             type="text"
             placeholder="ImageURL.png"
             className="border w-full p-2 rounded"
-          />
-          <input
-            type="text"
-            placeholder="ImageURL.png"
-            className="border w-full p-2 rounded mt-2"
-          />
-          <input
-            type="text"
-            placeholder="ImageURL.png"
-            className="border w-full p-2 rounded mt-2"
-          />
-          <input
-            type="text"
-            placeholder="ImageURL.png"
-            className="border w-full p-2 rounded mt-2"
-          />
-          <input
-            type="text"
-            placeholder="ImageURL.png"
-            className="border w-full p-2 rounded mt-2"
-          />
-          <input
-            type="text"
-            placeholder="ImageURL.png"
-            className="border w-full p-2 rounded mt-2"
-          />
-          <input
-            type="text"
-            placeholder="ImageURL.png"
-            className="border w-full p-2 rounded mt-2"
+    
           />
         </div>
       </div>
