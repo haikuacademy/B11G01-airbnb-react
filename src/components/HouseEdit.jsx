@@ -83,12 +83,14 @@ function HouseEdit() {
         <div className="">
           {/* Photos */}
           <div className="text-sm text-gray-300">Photos</div>
-          <input
-            type="text"
-            placeholder="ImageURL.png"
-            className="border w-full p-2 rounded"
-    
-          />
+          {house.images.map((image, index) => (
+            <input
+              key={index}
+              type="text"
+              placeholder={image}
+              className="border w-full p-2 rounded"
+            />
+          ))}
         </div>
       </div>
     </div>
