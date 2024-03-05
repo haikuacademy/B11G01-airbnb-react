@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 function Gallery(props) {
   const images = props.images
   console.log('gallery', props)
