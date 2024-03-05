@@ -7,7 +7,7 @@ const houses = [
     location: 'Bangkok',
     rooms: 3,
     bathrooms: 2,
-    price: 250,
+    nightlyPrice: 250,
     rating: 4.8,
     reviews: 15,
     photo:
@@ -17,7 +17,7 @@ const houses = [
     location: 'Koh Samui',
     rooms: 4,
     bathrooms: 3,
-    price: 30,
+    nightlyPrice: 30,
     rating: 3.5,
     reviews: 10,
     photo:
@@ -27,7 +27,7 @@ const houses = [
     location: 'Madrid',
     rooms: 5,
     bathrooms: 4,
-    price: 50,
+    nightlyPrice: 50,
     rating: 2.9,
     reviews: 20,
     photo:
