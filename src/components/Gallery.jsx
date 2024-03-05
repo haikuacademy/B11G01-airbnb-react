@@ -8,7 +8,7 @@ function Gallery(props) {
       </div>
       <div className="grid grid-cols-3 gap-2 p-1">
         {images.map((image, index) => (
-          <img key={index} src={image} classname="rounded-md" alt={'house'} />
+          <img key={index} src={image} className="rounded-md" alt={'house'} />
         ))}
       </div>
     </div>
