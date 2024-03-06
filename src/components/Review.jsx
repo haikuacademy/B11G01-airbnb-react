@@ -6,6 +6,11 @@ import { useState, useEffect } from 'react'
 export default function Reviews() {
   const [reviews, SetReviews] = useState([])
 
+  const getReviews = async () => {
+    let { data } = await axios.get('https://haiku-bnb.onrender.com/reviews?house=1')
+    SetReviews(data)
+  }
+
   const averageRating =
     reviews.reduce((sum, review) => sum + review.rating, 0) / reviews.length
 
