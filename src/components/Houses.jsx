@@ -1,6 +1,7 @@
 import Nav from './Nav'
 import HouseCard from './HouseCard'
 import Filters from './Filters'
+import { useEffect, useState } from 'react'
 
 const houses = [
   {
