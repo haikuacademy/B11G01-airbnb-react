@@ -1,6 +1,38 @@
 import Nav from './Nav'
 import HouseCard from './HouseCard'
 
+const houseData = [
+  {
+    location: 'City Center',
+    rooms: 3,
+    bathrooms: 2,
+    nightlyPrice: 50,
+    rating: 4.8,
+    reviews: 15,
+    photo: 'https://example.com/house1_photo.jpg',
+    startDate: '2024-04-01',
+    endDate: '2024-04-03',
+    totalNights: 2,
+    totalPrice: 100
+  },
+
+  {
+    location: 'Suburban Area',
+    rooms: 4,
+    bathrooms: 3,
+    nightlyPrice: 40,
+    rating: 4.5,
+    reviews: 10,
+    photo: 'https://example.com/house2_photo.jpg',
+    startDate: '2024-06-01',
+    endDate: '2024-06-03',
+    totalNights: 2,
+    totalPrice: 80
+  },
+
+  // Add more house objects as needed
+
+];
 function Listings() {
   return (
     <div className="container mx-auto">
@@ -46,13 +78,9 @@ function Listings() {
       </div>
       {/* listings gallery */}
       <div className="grid gap-4 grid-cols-5">
-        <HouseCard listing={true} />
-        <HouseCard listing={true}/>
-        <HouseCard listing={true}/>
-        <HouseCard listing={true}/>
-        <HouseCard listing={true}/>
-        <HouseCard listing={true}/>
-        <HouseCard listing={true}/>
+        {houseData.map((house, index) => 
+          <HouseCard key={index} house={house} listing={true} />
+ )}
       </div>
     </div>
   )

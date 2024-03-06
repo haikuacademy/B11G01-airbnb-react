@@ -15,20 +15,20 @@ function HouseCard(props) {
   console.log(numberOfStars)
 
   return (
-    <Link to="/houses/1>">
+    <Link to="/houses/1">
       <div className="border rounded p-2 m-1">
         <img src={props.house.photo} alt="House" className="rounded" />
         <span className="text-lg font-bold">{props.house.location}</span>
-        <div class="flex text-sm justify-left gap-1 font-extralight">
+        <div className="flex text-sm justify-left gap-1 font-extralight">
           <span>{props.house.rooms} rooms</span>
           <span>·</span>
           <span>{props.house.bathrooms} bathrooms</span>
         </div>
         <div className="pt-2">
-          <span className="text-lg font-bold">${props.house.price}</span>
+          <span className="text-lg font-bold">${props.house.nightlyPrice}</span>
         </div>
         <div className="pt-2">
-          <div class="flex justify-between">
+          <div className="flex justify-between">
             <div className="flex gap-0 items-center">
               {[...new Array(numberOfStars)].map((val, index) => (
                 <FontAwesomeIcon

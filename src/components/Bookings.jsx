@@ -31,8 +31,8 @@ const bookings = [
     photo: 'https://example.com/house2_photo.jpg',
     startDate: '2024-06-01',
     endDate: '2024-06-03',
-    totalNights: 3,
-    totalPrice: 150
+    totalNights: 2,
+    totalPrice: 80
   },
   {
     location: 'Countryside',
@@ -45,8 +45,8 @@ const bookings = [
       'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png',
     startDate: '2024-11-22',
     endDate: '2024-11-29',
-    totalNights: 3,
-    totalPrice: 150
+    totalNights: 7,
+    totalPrice: 595
   }
 ]
 
