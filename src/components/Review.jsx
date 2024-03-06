@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCommentDots, faStar } from '@fortawesome/free-solid-svg-icons'
+import axios from 'axios'
 
 export default function Reviews() {
   const reviews = [
