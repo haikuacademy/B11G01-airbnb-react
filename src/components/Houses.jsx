@@ -6,6 +6,7 @@ import { useState } from 'react'
 
 
 function Houses() {
+  const [houses, setHouses] = useState([])
   return (
     /* search bar */
     <div className="container mx-auto">
