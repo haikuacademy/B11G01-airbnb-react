@@ -2,6 +2,7 @@ import Nav from './Nav'
 import Gallery from './Gallery'
 import Review from './Review'
 import LeaveReview from './LeaveReview'
+import {useState, useEffect} from 'react'
 
 const house = {
   location: 'Beautiful City, Country',
