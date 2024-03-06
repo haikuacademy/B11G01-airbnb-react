@@ -51,8 +51,8 @@ function Houses() {
     if (startDate && endDate) {
       const start = new Date(startDate)
       const end = new Date(endDate)
-      const differenceTime = end.getTime() - start.getTime()
-      const differenceDays = differenceTime / (24 * 1000 * 3600) //3600 from seconds * minutes
+      const differenceTime = Math.abs(end - start)
+      const differenceDays = Math.ceil(differenceTime / (24 * 1000 * 3600)) //3600 from seconds * minutes
       setNights(differenceDays)
     }
   }, [startDate, endDate])
