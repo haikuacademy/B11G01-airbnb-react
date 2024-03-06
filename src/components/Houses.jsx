@@ -9,7 +9,7 @@ function Houses() {
   const [houses, setHouses] = useState([])
 
   const getHouses = async () => {
-    let { data } = await axios.get('/houses')
+    let { data } = await axios.get('http://localhost:3000/houses')
     setHouses(data)
   }
   return (
