@@ -48,14 +48,14 @@ function Houses() {
     setEndDate(event)
   }
   useEffect(() => {
-    setStartDate(startDate)
-  }, [startDate])
-  useEffect(() => {
-    setEndDate(endDate)
-  }, [endDate])
-  useEffect(() => {
-    setNights(nights)
-  }, [nights])
+    if (startDate && endDate) {
+      const start = new Date(startDate)
+      const end = new Date(endDate)
+      const differenceTime = end.getTime() - start.getTime()
+      const differenceDays = differenceTime / (24 * 1000 * 3600) //3600 from seconds * minutes
+      setNights(differenceDays)
+    }
+  }, [startDate, endDate])
 
   return (
     /* search bar */
