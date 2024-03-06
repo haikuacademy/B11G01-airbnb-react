@@ -67,7 +67,7 @@ function HouseCard(props) {
               </Link>
             </div>
             <div className="bg-white p-2 mx-1 rounded border">
-              <Link to="/edit-listing/1" className="text-black ">
+              <Link to="/houses/:id/edit" className="text-black ">
                 Edit
               </Link>
             </div>
