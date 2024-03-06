@@ -12,6 +12,9 @@ function Houses() {
     let { data } = await axios.get('http://localhost:3000/houses')
     setHouses(data)
   }
+  useEffect(() => {
+    getHouses()
+  }, [])
   return (
     /* search bar */
     <div className="container mx-auto">
