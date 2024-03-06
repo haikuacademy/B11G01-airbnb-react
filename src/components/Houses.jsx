@@ -1,6 +1,7 @@
 import Nav from './Nav'
 import HouseCard from './HouseCard'
 import Filters from './Filters'
+import axios from 'axios'
 
 const houses = [
   {
