@@ -4,7 +4,7 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 
 export default function Reviews() {
-
+  const [reviews, SetReviews] = useState([])
 
   const averageRating =
     reviews.reduce((sum, review) => sum + review.rating, 0) / reviews.length
