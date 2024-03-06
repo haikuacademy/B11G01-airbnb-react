@@ -32,6 +32,28 @@ const house = {
 }
 
 function House() {
+  const [startDate, setStartDate] = useState('')
+  const [endDate, setEndDate] = useState('')
+  const [nights, setNights] = useState(0)
+  const [totalPrice, setTotalPrice] = useState(0)
+
+  const startingDate = (event) => {
+    setStartDate(event.target.value)
+}
+  const endingDate = (event) => {
+    setEndDate(event.target.value)
+}
+useEffect(() => {
+  if (startDate && endDate) {
+    const start = new Date(startDate)
+    const end = new Date(endDate)
+    const differenceTime = Math.abs(end - start)
+    const differenceDays = Math.ceil(differenceTime / (24 * 1000 * 3600)) //3600 from seconds * minutes
+    setNights(differenceDays)
+    const totalPrice = differenceDays * house.nightlyPrice
+    setTotalPrice(totalPrice)
+  }
+}, [startDate, endDate])
   return (
     <div className="container mx-auto">
       <Nav />
@@ -81,13 +103,13 @@ function House() {
                 <label className="text-sm font-thin text-gray-400">
                   Check in
                 </label>
-                <input className="border rounded p-2 gap-2" type="date" />
+                <input className="border rounded p-2 gap-2" type="date" value={startDate} onChange={startingDate} />
               </div>
               <div className="flex flex-col">
                 <label className="text-sm font-thin text-gray-400">
                   Check out
                 </label>
-                <input className="border rounded p-2" type="date" />
+                <input className="border rounded p-2" type="date" value={endDate} onChange={endingDate} />
               </div>
             </div>
             <textarea
@@ -97,8 +119,8 @@ function House() {
             ></textarea>
             <div class="flex justify-between items-center gap-1">
               <div className="flex justify-start pl-2">
-                <div className="flex pr-1">{house.totalNights} nights =</div>
-                <div className="flex font-bold">${house.totalPrice}</div>
+                <div className="flex pr-1">{nights} nights =</div>
+                <div className="flex font-bold">${totalPrice}</div>
               </div>
 
               <div className="flex justify-end">
