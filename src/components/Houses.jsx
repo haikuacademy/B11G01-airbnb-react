@@ -39,7 +39,14 @@ const houses = [
 function Houses() {
   const [startDate, setStartDate] = useState('')
   const [endDate, setEndDate] = useState('')
-  const [nights, setNights] = useState('')
+  const [nights, setNights] = useState(0)
+
+  function startingDate(event) {
+    setStartDate(event)
+  }
+  function endingDate(event) {
+    setEndDate(event)
+  }
   return (
     /* search bar */
     <div className="container mx-auto">
