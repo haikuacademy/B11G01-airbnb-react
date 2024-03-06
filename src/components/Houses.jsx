@@ -47,6 +47,16 @@ function Houses() {
   function endingDate(event) {
     setEndDate(event)
   }
+  useEffect(() => {
+    setStartDate(startDate)
+  }, [startDate])
+  useEffect(() => {
+    setEndDate(endDate)
+  }, [endDate])
+  useEffect(() => {
+    setNights(nights)
+  }, [nights])
+
   return (
     /* search bar */
     <div className="container mx-auto">
