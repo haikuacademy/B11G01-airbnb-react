@@ -70,9 +70,10 @@ function Houses() {
       {/* gallery */}
       <div className="grid gap-2 grid-cols-5">
         {houses.map((house, index) => (
-          <HouseCard house={house} />
+          <HouseCard key={index} house={house} />
         ))}
       </div>
+
     </div>
   )
 }
