@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCommentDots, faStar } from '@fortawesome/free-solid-svg-icons'
 import axios from 'axios'
+import { useState, useEffect } from 'react'
 
 export default function Reviews() {
 
