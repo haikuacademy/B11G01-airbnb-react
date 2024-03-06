@@ -1,7 +1,6 @@
 import Nav from './Nav'
 import HouseCard from './HouseCard'
 import Filters from './Filters'
-import { useEffect, useState } from 'react'
 
 const houses = [
   {
@@ -37,29 +36,6 @@ const houses = [
 ]
 
 function Houses() {
-  const [startDate, setStartDate] = useState('')
-  const [endDate, setEndDate] = useState('')
-  const [nights, setNights] = useState(0)
-  const [totalPrice, setTotalPrice] = useState(0)
-
-  const startingDate = (event) => {
-    setStartDate(event.target.value)
-  }
-  const endingDate = (event) => {
-    setEndDate(event.target.value)
-  }
-  useEffect(() => {
-    if (startDate && endDate) {
-      const start = new Date(startDate)
-      const end = new Date(endDate)
-      const differenceTime = Math.abs(end - start)
-      const differenceDays = Math.ceil(differenceTime / (24 * 1000 * 3600)) //3600 from seconds * minutes
-      setNights(differenceDays)
-      const pricePerNight = houses.price
-      const totalPrice = differenceDays * pricePerNight
-      setTotalPrice(totalPrice)
-    }
-  }, [startDate, endDate])
 
   return (
     /* search bar */
