@@ -7,6 +7,11 @@ import { useState } from 'react'
 
 function Houses() {
   const [houses, setHouses] = useState([])
+
+  const getHouses = async () => {
+    let { data } = await axios.get('/houses')
+    setHouses(data)
+  }
   return (
     /* search bar */
     <div className="container mx-auto">
