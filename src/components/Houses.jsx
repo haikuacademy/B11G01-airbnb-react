@@ -40,6 +40,7 @@ function Houses() {
   const [startDate, setStartDate] = useState('')
   const [endDate, setEndDate] = useState('')
   const [nights, setNights] = useState(0)
+  const [totalPrice, setTotalPrice] = useState(0)
 
   function startingDate(event) {
     setStartDate(event)
@@ -54,6 +55,7 @@ function Houses() {
       const differenceTime = Math.abs(end - start)
       const differenceDays = Math.ceil(differenceTime / (24 * 1000 * 3600)) //3600 from seconds * minutes
       setNights(differenceDays)
+
     }
   }, [startDate, endDate])
 
