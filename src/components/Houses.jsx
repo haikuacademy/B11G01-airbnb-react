@@ -9,7 +9,7 @@ function Houses() {
   const [houses, setHouses] = useState([])
 
   const getHouses = async () => {
-    let { data } = await axios.get('http://localhost:3000/houses')
+    let { data } = await axios.get('https://haiku-bnb.onrender.com/houses')
     setHouses(data)
   }
   useEffect(() => {
@@ -24,7 +24,7 @@ function Houses() {
       {/* gallery */}
       <div className="grid gap-2 grid-cols-5">
         {houses.map((house, index) => (
-          <HouseCard house={house} />
+          <HouseCard key={index} house={house} />
         ))}
       </div>
     </div>
