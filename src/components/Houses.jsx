@@ -42,11 +42,11 @@ function Houses() {
   const [nights, setNights] = useState(0)
   const [totalPrice, setTotalPrice] = useState(0)
 
-  function startingDate(event) {
-    setStartDate(event)
+  const startingDate = (event) => {
+    setStartDate(event.target.value)
   }
-  function endingDate(event) {
-    setEndDate(event)
+  const endingDate = (event) => {
+    setEndDate(event.target.value)
   }
   useEffect(() => {
     if (startDate && endDate) {
@@ -55,7 +55,9 @@ function Houses() {
       const differenceTime = Math.abs(end - start)
       const differenceDays = Math.ceil(differenceTime / (24 * 1000 * 3600)) //3600 from seconds * minutes
       setNights(differenceDays)
-
+      const pricePerNight = houses.price
+      const totalPrice = differenceDays * pricePerNight
+      setTotalPrice(totalPrice)
     }
   }, [startDate, endDate])
 
