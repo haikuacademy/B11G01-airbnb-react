@@ -2,6 +2,7 @@ import Nav from './Nav'
 import Gallery from './Gallery'
 import Review from './Review'
 import LeaveReview from './LeaveReview'
+import axios from 'axios'
 
 const house = {
   location: 'Beautiful City, Country',
