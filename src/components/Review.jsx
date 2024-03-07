@@ -1,40 +1,18 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCommentDots, faStar } from '@fortawesome/free-solid-svg-icons'
+import axios from 'axios'
+import { useState, useEffect } from 'react'
 
 export default function Reviews() {
-  const reviews = [
-    {
-      content:
-        'This place exceeded my expectations! I would definitely return.',
-      rating: 5,
-      date: '2024-03-02',
-      author: {
-        firstName: 'Ryan',
-        lastName: 'Jones',
-        picture: 'https://randomuser.me/api/portraits/men/71.jpg'
-      }
-    },
-    {
-      content: 'Not satisfied with the house. It could be better.',
-      rating: 2,
-      date: '2024-03-01',
-      author: {
-        firstName: 'Karen',
-        lastName: 'Trash',
-        picture: 'https://randomuser.me/api/portraits/women/53.jpg'
-      }
-    },
-    {
-      content: 'Great location and super responsive host!',
-      rating: 4.5,
-      date: '2024-02-28',
-      author: {
-        firstName: 'Jim',
-        lastName: 'Crawford',
-        picture: 'https://randomuser.me/api/portraits/men/11.jpg'
-      }
-    }
-  ]
+  const [reviews, setReviews] = useState([])
+
+  const getReviews = async () => {
+    let { data } = await axios.get('https://haiku-bnb.onrender.com/reviews?house_id=1')
+    setReviews(data)
+  }
+  useEffect(() => {
+    getReviews()
+  }, [])
 
   const averageRating =
     reviews.reduce((sum, review) => sum + review.rating, 0) / reviews.length
