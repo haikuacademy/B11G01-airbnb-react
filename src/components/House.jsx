@@ -7,10 +7,13 @@ import { useState, useEffect } from 'react'
 
 function House() {
   const [house, setHouse] = useState([])
-  const getHouses = async () => {
+  const getHouse = async () => {
     let { data } = await axios.get('https://haiku-bnb.onrender.com/houses/1')
     setHouse(data)
   }
+  useEffect(() => {
+    getHouse()
+  }, [])
 
   return (
     <div className="container mx-auto">
