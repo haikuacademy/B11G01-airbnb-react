@@ -4,7 +4,7 @@ import Review from './Review'
 import LeaveReview from './LeaveReview'
 import axios from 'axios'
 
-
+const [house, setHouse] = useState([])
 
 function House() {
   return (
