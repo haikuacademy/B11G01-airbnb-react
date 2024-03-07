@@ -6,7 +6,7 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 
 function House() {
-  const [house, setHouse] = useState([])
+  const [house, setHouse] = useState(undefined)
   const getHouse = async () => {
     let { data } = await axios.get('https://haiku-bnb.onrender.com/houses/1')
     setHouse(data)
@@ -15,24 +15,31 @@ function House() {
     getHouse()
   }, [])
 
+  // if (house === undefined) {
+  //   return <div>loading</div>
+  // }    
+  // comment code above, this is used when you dont render the house and dont use the nuances operator(?.)
+  // In the code below, the optional chaining operator (?.) is used to access nested properties such as house.location, house.host.picture, house.host.firstName, etc. 
+  // This ensures that if any of these properties are null or undefined, the expression evaluates to undefined instead of throwing an error.
+
   return (
     <div className="container mx-auto">
       <Nav />
-      <Gallery images={house.images} />
+      {house && <Gallery images={house.images} />}
       <div className="grid grid-cols-3 gap-40 ml-2 p-2">
         <div className="col-span-2">
           <div className="pb-4">
-            <span className="text-xl font-bold">{house.location}</span>
+            <span className="text-xl font-bold">{house?.location}</span>
             <div class="flex text-xs text-slate-400 justify-left gap-1">
-              <span>{house.rooms} rooms</span>
+              <span>{house?.rooms} rooms</span>
               <span>·</span>
-              <span>{house.bathrooms} bathrooms</span>
+              <span>{house?.bathrooms} bathrooms</span>
             </div>
           </div>
           <div className="flex grid-cols-2 grid=rows-2 gap-2 p-2">
             <div>
               <img
-                src={house.host.picture}
+                src={house?.host.picture}
                 alt="Host"
                 className="w-8 rounded-full"
               ></img>
@@ -43,12 +50,12 @@ function House() {
               </span>
               <div class="flex text-sm justify-left gap-1">
                 <span>
-                  {house.host.firstName} {house.host.lastName}
+                  {house?.host.firstName} {house?.host.lastName}
                 </span>
               </div>
             </div>
           </div>
-          <div className="flex text-sm mb-10">{house.description}</div>
+          <div className="flex text-sm mb-10">{house?.description}</div>
           <div className="flex grid-cols-2 gap-2">
             <Review />
           </div>
@@ -56,7 +63,7 @@ function House() {
         <div className="">
           <div className="border rounded p-3 m-1">
             <div className="pb-2">
-              <span className="font-bold">${house.nightlyPrice}</span>
+              <span className="font-bold">${house?.nightlyPrice}</span>
               <span className="text-xs font-bold text-slate-400"> / night</span>
             </div>
             <div className="flex">
@@ -80,8 +87,8 @@ function House() {
             ></textarea>
             <div class="flex justify-between items-center gap-1">
               <div className="flex justify-start pl-2">
-                <div className="flex pr-1">{house.totalNights} nights =</div>
-                <div className="flex font-bold">${house.totalPrice}</div>
+                <div className="flex pr-1">{house?.totalNights} nights =</div>
+                <div className="flex font-bold">${house?.totalPrice}</div>
               </div>
 
               <div className="flex justify-end">
