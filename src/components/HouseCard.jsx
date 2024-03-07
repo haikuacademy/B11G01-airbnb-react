@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar, faCommentDots } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 function formatDate(dateString) {
   const date = new Date(dateString)
@@ -11,11 +12,12 @@ function formatDate(dateString) {
 function HouseCard(props) {
   const rating = props.house.rating
   const numberOfStars = Math.floor(rating)
+  const { id } = useParams
 
   console.log(numberOfStars)
 
   return (
-    <Link to="/houses/1">
+    <Link to="/houses/{props.house.id">
       <div className="border rounded p-2 m-1">
         <img src={props.house.photo} alt="House" className="rounded" />
         <span className="text-lg font-bold">{props.house.location}</span>
