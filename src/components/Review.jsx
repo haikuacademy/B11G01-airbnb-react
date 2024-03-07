@@ -7,7 +7,7 @@ export default function Reviews() {
   const [reviews, SetReviews] = useState([])
 
   const getReviews = async () => {
-    let { data } = await axios.get('https://haiku-bnb.onrender.com/reviews?house=1')
+    let { data } = await axios.get('https://haiku-bnb.onrender.com/reviews?house_id=1')
     SetReviews(data)
   }
   useEffect(() => {
