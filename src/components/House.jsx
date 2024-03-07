@@ -2,53 +2,44 @@ import Nav from './Nav'
 import Gallery from './Gallery'
 import Review from './Review'
 import LeaveReview from './LeaveReview'
-
-const house = {
-  location: 'Beautiful City, Country',
-  rooms: 3,
-  bathrooms: 2,
-  description: 'Cozy and spacious house in a prime location.',
-  nightlyPrice: 60,
-  totalNights: 3,
-  totalPrice: 180,
-  rating: 4.5,
-  host: {
-    firstName: 'Juan',
-    lastName: 'Doe',
-    picture: 'https://randomuser.me/api/portraits/men/77.jpg'
-  },
-  images: [
-    'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png',
-    'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_02.png',
-    'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_03.png',
-    'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_04.png',
-    'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_05.png',
-    'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_06.png',
-    'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_07.png',
-    'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_08.png',
-    'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_09.png'
-  ]
-}
+import axios from 'axios'
+import { useState, useEffect } from 'react'
 
 function House() {
+  const [house, setHouse] = useState(undefined)
+  const getHouse = async () => {
+    let { data } = await axios.get('https://haiku-bnb.onrender.com/houses/1')
+    setHouse(data)
+  }
+  useEffect(() => {
+    getHouse()
+  }, [])
+
+  // if (house === undefined) {
+  //   return <div>loading</div>
+  // }    
+  // comment code above, this is used when you dont render the house and dont use the nuances operator(?.)
+  // In the code below, the optional chaining operator (?.) is used to access nested properties such as house.location, house.host.picture, house.host.firstName, etc. 
+  // This ensures that if any of these properties are null or undefined, the expression evaluates to undefined instead of throwing an error.
+
   return (
     <div className="container mx-auto">
       <Nav />
-      <Gallery images={house.images} />
+      {house && <Gallery images={house.images} />}
       <div className="grid grid-cols-3 gap-40 ml-2 p-2">
         <div className="col-span-2">
           <div className="pb-4">
-            <span className="text-xl font-bold">{house.location}</span>
+            <span className="text-xl font-bold">{house?.location}</span>
             <div class="flex text-xs text-slate-400 justify-left gap-1">
-              <span>{house.rooms} rooms</span>
+              <span>{house?.rooms} rooms</span>
               <span>·</span>
-              <span>{house.bathrooms} bathrooms</span>
+              <span>{house?.bathrooms} bathrooms</span>
             </div>
           </div>
           <div className="flex grid-cols-2 grid=rows-2 gap-2 p-2">
             <div>
               <img
-                src={house.host.picture}
+                src={house?.host.picture}
                 alt="Host"
                 className="w-8 rounded-full"
               ></img>
@@ -59,12 +50,12 @@ function House() {
               </span>
               <div class="flex text-sm justify-left gap-1">
                 <span>
-                  {house.host.firstName} {house.host.lastName}
+                  {house?.host.firstName} {house?.host.lastName}
                 </span>
               </div>
             </div>
           </div>
-          <div className="flex text-sm mb-10">{house.description}</div>
+          <div className="flex text-sm mb-10">{house?.description}</div>
           <div className="flex grid-cols-2 gap-2">
             <Review />
           </div>
@@ -72,7 +63,7 @@ function House() {
         <div className="">
           <div className="border rounded p-3 m-1">
             <div className="pb-2">
-              <span className="font-bold">${house.nightlyPrice}</span>
+              <span className="font-bold">${house?.nightlyPrice}</span>
               <span className="text-xs font-bold text-slate-400"> / night</span>
             </div>
             <div className="flex">
@@ -96,8 +87,8 @@ function House() {
             ></textarea>
             <div class="flex justify-between items-center gap-1">
               <div className="flex justify-start pl-2">
-                <div className="flex pr-1">{house.totalNights} nights =</div>
-                <div className="flex font-bold">${house.totalPrice}</div>
+                <div className="flex pr-1">{house?.totalNights} nights =</div>
+                <div className="flex font-bold">${house?.totalPrice}</div>
               </div>
 
               <div className="flex justify-end">
