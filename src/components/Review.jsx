@@ -4,11 +4,11 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 
 export default function Reviews() {
-  const [reviews, SetReviews] = useState([])
+  const [reviews, setReviews] = useState([])
 
   const getReviews = async () => {
     let { data } = await axios.get('https://haiku-bnb.onrender.com/reviews?house_id=1')
-    SetReviews(data)
+    setReviews(data)
   }
   useEffect(() => {
     getReviews()
