@@ -3,10 +3,11 @@ import Gallery from './Gallery'
 import Review from './Review'
 import LeaveReview from './LeaveReview'
 import axios from 'axios'
-
+import { useState, useEffect } from 'react'
 
 function House() {
   const [house, setHouse] = useState([])
+
   return (
     <div className="container mx-auto">
       <Nav />
