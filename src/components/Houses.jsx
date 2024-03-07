@@ -15,6 +15,7 @@ function Houses() {
   useEffect(() => {
     getHouses()
   }, [])
+
   return (
     /* search bar */
     <div className="container mx-auto">
@@ -27,6 +28,7 @@ function Houses() {
           <HouseCard key={index} house={house} />
         ))}
       </div>
+
     </div>
   )
 }

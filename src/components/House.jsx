@@ -2,6 +2,7 @@ import Nav from './Nav'
 import Gallery from './Gallery'
 import Review from './Review'
 import LeaveReview from './LeaveReview'
+
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 
@@ -21,6 +22,7 @@ function House() {
   // comment code above, this is used when you dont render the house and dont use the nuances operator(?.)
   // In the code below, the optional chaining operator (?.) is used to access nested properties such as house.location, house.host.picture, house.host.firstName, etc. 
   // This ensures that if any of these properties are null or undefined, the expression evaluates to undefined instead of throwing an error.
+
 
   return (
     <div className="container mx-auto">
@@ -71,13 +73,13 @@ function House() {
                 <label className="text-sm font-thin text-gray-400">
                   Check in
                 </label>
-                <input className="border rounded p-2 gap-2" type="date" />
+                <input className="border rounded p-2 gap-2" type="date" value={startDate} onChange={startingDate} />
               </div>
               <div className="flex flex-col">
                 <label className="text-sm font-thin text-gray-400">
                   Check out
                 </label>
-                <input className="border rounded p-2" type="date" />
+                <input className="border rounded p-2" type="date" value={endDate} onChange={endingDate} />
               </div>
             </div>
             <textarea
