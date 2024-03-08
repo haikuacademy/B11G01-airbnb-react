@@ -1,4 +1,26 @@
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
+
 function Login() {
+  // const [emailIsValid, setEmailIsValid] = useState(true)
+  const [error, setError] = useState('')
+
+  const navigate = useNavigate()
+
+  const submitForm = async (e) => {
+    e.preventDefault()
+    setError('')
+    const response = await axios.post('https://haiku-bnb.onrender.com/login', {
+      email: e.target.email.value,
+      password: e.target.password.value
+    })
+    if (response.data.error) {
+      setError(response.data.error)
+    } else {
+      navigate('/')
+    }
+  }
   return (
     <div className="border mx-auto justify-center m-5 w-80 text-gray-400 p-4">
       <img
@@ -6,14 +28,22 @@ function Login() {
         src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1642399114/portal/web%20development%20beginners/05%20Project%20Airbnb/assets/logo-airbnb.png"
         alt="logo"
       ></img>
-      <form action="" className="space-y-2">
+      <form onSubmit={submitForm} className="space-y-2">
         <div>
           <div>Email</div>
-          <input type="email" className="border rounded w-full  p-1" />
+          <input
+            name="email"
+            type="email"
+            className="border rounded w-full  p-1"
+          />
         </div>
         <div>
           <div>Password</div>
-          <input type="password" className="border rounded w-full p-1" />
+          <input
+            name="password"
+            type="password"
+            className="border rounded w-full p-1"
+          />
         </div>
         <div>
           <button className="border bg-red-400  text-white rounded w-full justify-center p-4 py-2 mt-2">
@@ -22,6 +52,7 @@ function Login() {
           </button>
         </div>
       </form>
+      <div>{error}</div>
       <div>
         <div className="flex items-center justify-betwen mt-2" />
         <p className=" inline text-black">
