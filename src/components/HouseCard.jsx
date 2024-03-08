@@ -22,7 +22,7 @@ function HouseCard(props) {
   console.log(numberOfStars)
 
   return (
-    <Link to="/houses/{props.house.id">
+    <Link to={`/houses/${props.house.house_id}`}>
       <div className="border rounded p-2 m-1">
         {props.house.photo ? (
           <img src={props.house.photo} alt="House" className="rounded" />

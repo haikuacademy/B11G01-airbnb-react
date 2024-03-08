@@ -5,11 +5,15 @@ import LeaveReview from './LeaveReview'
 
 import axios from 'axios'
 import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 
 function House() {
   const [house, setHouse] = useState(undefined)
+  const { id } = useParams()
   const getHouse = async () => {
-    let { data } = await axios.get('https://haiku-bnb.onrender.com/houses/1')
+    let { data } = await axios.get(
+      'https://haiku-bnb.onrender.com/houses/' + id
+    )
     setHouse(data)
   }
   useEffect(() => {
