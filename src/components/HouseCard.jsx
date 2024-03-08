@@ -10,16 +10,25 @@ function formatDate(dateString) {
 }
 
 function HouseCard(props) {
-  const rating = props.house.rating
+  // const rating = props.house.rating
+  const rating = 5
+  // const reviewCount = props.house.reviews_count
+  const reviewCount = 6
   const numberOfStars = Math.floor(rating)
   const { id } = useParams
+
+  console.log(props)
 
   console.log(numberOfStars)
 
   return (
     <Link to="/houses/{props.house.id">
       <div className="border rounded p-2 m-1">
-        <img src={props.house.photo} alt="House" className="rounded" />
+        {props.house.photo ? (
+          <img src={props.house.photo} alt="House" className="rounded" />
+        ) : (
+          <div className="h-20">no photo</div>
+        )}
         <span className="text-lg font-bold">{props.house.location}</span>
         <div className="flex text-sm justify-left gap-1 font-extralight">
           <span>{props.house.rooms} rooms</span>
@@ -27,7 +36,7 @@ function HouseCard(props) {
           <span>{props.house.bathrooms} bathrooms</span>
         </div>
         <div className="pt-2">
-          <span className="text-lg font-bold">${props.house.nightlyPrice}</span>
+          <span className="text-lg font-bold">${props.house.price}</span>
         </div>
         <div className="pt-2">
           <div className="flex justify-between">
@@ -42,7 +51,7 @@ function HouseCard(props) {
               <div className="ml-2">{rating}</div>
             </div>
             <div className="flex gap-1 items-center">
-              {props.house.reviews}
+              {reviewCount}
               <FontAwesomeIcon
                 icon={faCommentDots}
                 className="pointer-events-none"
