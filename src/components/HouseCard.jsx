@@ -10,10 +10,10 @@ function formatDate(dateString) {
 }
 
 function HouseCard(props) {
-  // const rating = props.house.rating
-  const rating = 5
-  // const reviewCount = props.house.reviews_count
-  const reviewCount = 6
+  const rating = props.house.rating
+  // const rating = 5
+  const reviewCount = props.house.reviews_count
+  // const reviewCount = 6
   const numberOfStars = Math.floor(rating)
   const { id } = useParams
 
