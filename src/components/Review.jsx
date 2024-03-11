@@ -4,21 +4,7 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 
 export default function Reviews({ rating, house_id }) {
-  const [reviews, setReviews] = useState([
-    {
-      author: {
-        firstName: 'Ray',
-        lastName: 'Ramirez',
-        picture: 'https://randomuser.me/api/portraits/men/33.jpg'
-      },
-      content: 'Tanya is crazy!',
-      date: 'Feb 11, 2024',
-      house_id: 9,
-      rating: 4,
-      review_id: 33,
-      user_id: 29
-    }
-  ])
+  const [reviews, setReviews] = useState([])
   // const [loading, setLoading] = useState(true)
   const [reviewed, setReviewed] = useState(false)
 

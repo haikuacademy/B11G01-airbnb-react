@@ -10,7 +10,6 @@ import Reviews from './Review'
 function House() {
   const [house, setHouse] = useState(undefined)
   const { id } = useParams()
-  const { rating } = useParams()
   const getHouse = async () => {
     let { data } = await axios.get(
       'https://haiku-bnb.onrender.com/houses/' + id
@@ -63,7 +62,7 @@ function House() {
           </div>
           <div className="flex text-sm mb-10">{house?.description}</div>
           <div className="flex grid-cols-2 gap-2">
-            <Reviews house_id={id} rating={rating} />
+            <Reviews house_id={id} rating={house?.rating} />
           </div>
         </div>
         <div className="">
