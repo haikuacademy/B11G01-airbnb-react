@@ -5,6 +5,7 @@ import {
   faDollarSign,
   faSort
 } from '@fortawesome/free-solid-svg-icons'
+import { useState, useEffect } from 'react'
 
 function Filters() {
   return (
