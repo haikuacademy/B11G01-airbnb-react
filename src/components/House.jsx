@@ -31,6 +31,7 @@ const house = {
   ]
 }
 
+
 function House() {
   const [startDate, setStartDate] = useState('')
   const [endDate, setEndDate] = useState('')
