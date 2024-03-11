@@ -3,47 +3,75 @@ import { faCommentDots, faStar } from '@fortawesome/free-solid-svg-icons'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 
-export default function Reviews() {
-  const [reviews, setReviews] = useState([])
+export default function Reviews({ rating, house_id }) {
+  const [reviews, setReviews] = useState([
+    {
+      author: {
+        firstName: 'Ray',
+        lastName: 'Ramirez',
+        picture: 'https://randomuser.me/api/portraits/men/33.jpg'
+      },
+      content: 'Tanya is crazy!',
+      date: 'Feb 11, 2024',
+      house_id: 9,
+      rating: 4,
+      review_id: 33,
+      user_id: 29
+    }
+  ])
+  // const [loading, setLoading] = useState(true)
+  const [reviewed, setReviewed] = useState(false)
 
   const getReviews = async () => {
-    let { data } = await axios.get('https://haiku-bnb.onrender.com/reviews?house_id=1')
-    setReviews(data)
+    if (house_id) {
+      let response = await axios.get(
+        `https://haiku-bnb.onrender.com/reviews?house_id=${house_id}`
+      )
+      console.log('data', response)
+      setReviews(response.data)
+    }
   }
+  const leaveReview = async (e) => {
+    e.preventDefault()
+    const form = new FormData(e.target)
+    let formObject = Object.fromEntries(form.entries())
+    formObject.house_id = house_id
+    setReviewed(true)
+  }
+
   useEffect(() => {
     getReviews()
+    // eslint-disable-next-line
   }, [])
 
-  const averageRating =
-    reviews.reduce((sum, review) => sum + review.rating, 0) / reviews.length
+  const averageRating = 0
 
+  // reviews.reduce((sum, review) => sum + review.rating, 0) / reviews.length
   return (
-    <div className="container mx-auto gap-2">
-      <div className="flex gap-2 items-center">
-        <div className="inline mb-4">
-          <FontAwesomeIcon icon={faCommentDots} />
-          <span className="text-lg font-bold ml-1">
-            {' '}
-            {reviews.length} Reviews
-          </span>
-          <div>
-            <FontAwesomeIcon
-              icon={faStar}
-              className="absolute mt-1 pointer-events-none text-yellow-500"
-            />
-            <span
-              className="text-sm ml-6
-            "
-            >
-              Average Rating: {averageRating.toFixed(2)}
+    <div>
+      <div className="container mx-auto gap-2">
+        <div className="flex gap-2 items-center">
+          <div className="inline mb-4">
+            <FontAwesomeIcon icon={faCommentDots} />
+            <span className="text-lg font-bold ml-1">
+              {reviews.length} Reviews
             </span>
+            <div>
+              <FontAwesomeIcon
+                icon={faStar}
+                className="absolute mt-1 pointer-events-none text-yellow-500"
+              />
+              <span className="text-sm ml-6">
+                Average Rating: {averageRating.toFixed(2)}
+              </span>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="space-y-3">
-        {reviews.map((review, index) => (
-          <Review key={index} review={review} />
-        ))}
+        <div className="space-y-3">
+          {reviews.map((review, index) => (
+            <Review key={index} review={review} />
+          ))}
+        </div>
       </div>
     </div>
   )
