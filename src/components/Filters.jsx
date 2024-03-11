@@ -6,6 +6,7 @@ import {
   faSort
 } from '@fortawesome/free-solid-svg-icons'
 import { useState, useEffect } from 'react'
+import axios from 'axios'
 
 function Filters() {
   return (
