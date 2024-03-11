@@ -9,6 +9,9 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 function Filters() {
+  const [location, setLocation] = useState([])
+
+
   return (
     <form className="flex rounded bg-gray-200 justify-between p-2 mt-2 mb-2 gap-3 text-sm align-left">
       {/* Location */}
