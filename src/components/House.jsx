@@ -1,11 +1,11 @@
 import Nav from './Nav'
 import Gallery from './Gallery'
 import Review from './Review'
-import LeaveReview from './LeaveReview'
 
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import Reviews from './Review'
 
 function House() {
   const [house, setHouse] = useState(undefined)
@@ -62,7 +62,7 @@ function House() {
           </div>
           <div className="flex text-sm mb-10">{house?.description}</div>
           <div className="flex grid-cols-2 gap-2">
-            <Review />
+            <Reviews house_id={id} rating={house?.rating} />
           </div>
         </div>
         <div className="">
@@ -112,9 +112,7 @@ function House() {
               </div>
             </div>
           </div>
-          <div>
-            <LeaveReview />
-          </div>
+          <div>{/* <Reviews house_id={id} rating={rating} /> */}</div>
         </div>
       </div>
     </div>
