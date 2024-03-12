@@ -2,8 +2,10 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
+axios.defaults.withCredentials = true
+
 function Login() {
-  // const [emailIsValid, setEmailIsValid] = useState(true)
+  const [emailIsValid, setEmailIsValid] = useState(true)
   const [error, setError] = useState('')
 
   const navigate = useNavigate()
@@ -18,6 +20,7 @@ function Login() {
     if (response.data.error) {
       setError(response.data.error)
     } else {
+      localStorage.setItem('isLoggedIn', true)
       navigate('/')
     }
   }
