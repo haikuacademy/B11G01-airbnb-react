@@ -18,7 +18,7 @@ function Profile() {
   const logout = async (e) => {
     e.preventDefault()
     try {
-      const { data } = await axios.get('http://haiku-bnb.onrender.com/logout')
+      const { data } = await axios.get('https://haiku-bnb.onrender.com/logout')
       console.log({ data })
       localStorage.removeItem('isLoggedIn')
       navigate('/')
@@ -29,7 +29,7 @@ function Profile() {
 
   const getData = async () => {
     try {
-      const response = await axios.get('http://haiku-bnb.onrender.com/profile')
+      const response = await axios.get('https://haiku-bnb.onrender.com/profile')
       if (response.data.error) {
         navigate('/')
       } else {
